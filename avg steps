@@ -1,0 +1,4 @@
+activity_per_interval <- aggregate(steps~interval, activity_NONA, mean)
+ggplot(data = activity_per_interval) + 
+  geom_line(aes(interval,steps)) +
+  ggtitle("Average Number of Steps Taken per Interval")
