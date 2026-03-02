@@ -1,0 +1,9 @@
+library(ggplot2)
+activity_per_day <- aggregate(steps~date,activity_NONA, sum)
+head(activity_per_day)
+
+
+
+ggplot(data = activity_per_day) +
+    geom_histogram(aes(steps),binwidth = 500, fill = 'steelblue3', col = 'black') +
+    ggtitle("Total Number of Steps Taken Each Day")
