@@ -1,0 +1,6 @@
+activity_filled$weekdayType <- ifelse(weekdays(activity_filled$date) %in% c("Saturday", "Sunday"), 
+                              "weekend", "weekday")
+
+library(tidyverse)
+activity_filled3 <- activity_filled %>% group_by(interval, weekdayType) %>% summarise(meanSteps = mean(steps))
+head(activity_filled3)
