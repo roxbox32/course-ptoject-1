@@ -1,0 +1,4 @@
+activity_filled2 <- aggregate(steps~date, activity_filled,sum)
+ggplot(data = activity_filled2) +
+  geom_histogram(aes(steps), fill = 'red', col = 'black') +
+  ggtitle("Total Number of Steps Taken Each Day - Missing Values Added")
